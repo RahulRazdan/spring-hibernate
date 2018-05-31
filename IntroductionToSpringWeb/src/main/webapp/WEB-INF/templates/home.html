@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Home</title>
+</head>
+<body>
+	<h1>Hello world! This is HTML5 page.</h1>
+
+	<P>
+		The time on the server is <span th:text="${serverTime}"></span>.
+	</P>
+	<P>
+		Player Type is <span th:text="${PlayerType}"></span>.
+	</P>
+	<P>
+		Music Type is <span th:text="${MusicType}"></span>.
+	</P>
+	<P>
+		Music Type is <span th:text="${testSPL}"></span>.
+	</P>
+	<p th:if="${fileName}">
+		File <span th:text="${fileName}"></span> uploaded.
+	</p>
+	<form method="POST" th:object="${profilePicture}" action="register"
+		enctype="multipart/form-data">
+		<label>Profile Picture</label> <input type="file" name="picture"
+			accept="image/jpeg,image/png,image/gif"></input>
+		<button type="submit">Submit</button>
+	</form>
+	
+</body>
+</html>

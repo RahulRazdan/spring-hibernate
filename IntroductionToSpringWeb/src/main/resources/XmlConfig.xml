@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<import resource="flow-registry.xml"/>
+	<bean id="aopConfig" class="com.practice.spring.model.AOPTtest">
+		<constructor-arg value="#{T(System).out}"/>
+	</bean>
+	<bean id="musicBox" class="com.practice.spring.model.MusicBox" c:_="veryAdvance"/>
+	
+	<!-- <aop:config>
+		<aop:aspect ref="aopConfig">
+			<aop:pointcut expression="execution(* *.getType(..))" id="music"/>
+			<aop:before method="startAOPConfig" pointcut-ref="music"/>
+			<aop:after method="endAOPConfig" pointcut-ref="music"/>
+		</aop:aspect>
+	</aop:config> -->
+	
+</beans>
