@@ -42,7 +42,7 @@ public class QueryStudentDemo {
 	private static void displayStudents(List<Student> allStudent) {
 		if(allStudent!=null) {
 			for(Student s : allStudent) {
-				System.out.println("Found Student with Id: "+s.getId());
+				System.out.println("Found Student with Id: "+s);
 			}
 		}
 	}
